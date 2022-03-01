@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Klampt-examples.iml" filepath="$PROJECT_DIR$/.idea/Klampt-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ikpy/.idea/ikpy.iml" filepath="$PROJECT_DIR$/../ikpy/.idea/ikpy.iml" />
+      <module fileurl="file://D:/PyProjects/ikpydemo/.idea/ikpydemo.iml" filepath="D:/PyProjects/ikpydemo/.idea/ikpydemo.iml" />
+    </modules>
+  </component>
+</project>

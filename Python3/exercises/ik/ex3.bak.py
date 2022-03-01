@@ -64,7 +64,7 @@ if __name__ == "__main__":
     goalpoint = [0,0,0]
     ptlocal = coordinates.addPoint("ik-constraint-local",localpos,robot.getName()+":"+link.getName())
     ptworld = coordinates.addPoint("ik-constraint-world",goalpoint,"world")
-    print coordinates.manager().frames.keys()
+    print(coordinates.manager().frames.keys())
     
     vis.add("robot",robot)
     vis.add("coordinates",coordinates.manager())

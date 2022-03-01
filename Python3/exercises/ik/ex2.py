@@ -16,26 +16,21 @@ def solve_ik(robotlink,localpos,worldpos):
     linkindex = robotlink.index
     robot = robotlink.robot()
     #hint: your code should look like this
-    #obj = ik.objective(robotlink,...)
+    obj = model.ik.objective(robotlink, local=localpos, world=worldpos)
     # # In the ... you should do something to set up the objective so
     # # that the point localpos on the link is matched to worldpos.
     # # See klampt/ik.py for more details.
-    #maxIters = 100
-    #tol = 1e-3
-    #s = ik.solver(obj,maxIters,tol)
-    # # Set up some parameters for the numerical solver
-    # # Optionally you can set an initial configuration like so:
-    # # robot.setConfig([0]*robot.numLinks())
-    # # or set a random initial configuration like so:
-    # # s.sampleInitial()
-    #res = s.solve();
-    #if not res: print "Couldn't solve IK problem"
-    #return robot.getConfig()
+    maxIters = 100
+    tol = 1e-3
+    s = model.ik.solver(obj)
+    robotlink.robot().setConfig([0] * robotlink.robot().numLinks())
+    s.setMaxIters(maxIters)
+    s.setTolerance(tol)
+    res = s.solve()
+    numIter = s.lastSolveIters()
+    if not res: print("IK failure!")
+    return robot.getConfig()
 
-    #right now this just sets the zero configuration
-    q = [0]*robot.numLinks()
-    return q
-    
     
 
 if __name__ == "__main__":

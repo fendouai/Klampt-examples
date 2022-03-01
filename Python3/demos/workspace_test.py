@@ -35,6 +35,7 @@ fixed_indices = []
 for i in range(robot.numLinks()):
     if i not in links:
         fixed_indices.append(i)
+        
 
 #extract all objects and terrains as obstacles
 obstacles = []
